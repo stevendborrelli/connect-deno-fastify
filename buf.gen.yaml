@@ -1,0 +1,9 @@
+version: v2
+inputs:
+  - directory: connectrpc
+plugins:
+  - local: protoc-gen-es
+    # see https://github.com/NfNitLoop/deno-buf-connect/blob/74de9f7e4b1e8533db3d08d644cd571f887ef747/examples/oak-server-and-client/buf.gen.yaml#L18C20-L19C1
+    opt: target=ts,import_extension=.ts #,rewrite_imports=@bufbuild/protobuf:./bufbuild/protobuf.ts
+
+    out: gen
